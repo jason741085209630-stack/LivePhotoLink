@@ -1,0 +1,72 @@
+name: LivePhotoLink
+options:
+  bundleIdPrefix: com.livephotolink
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.4"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: "NO"
+
+targets:
+  LivePhotoLink:
+    type: application
+    platform: iOS
+    sources:
+      - path: LivePhotoLink
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.livephotolink.app
+        PRODUCT_NAME: LivePhotoLink
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        DEVELOPMENT_TEAM: ""
+    info:
+      path: LivePhotoLink/Info.plist
+      properties:
+        CFBundleDisplayName: LivePhoto Link
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen:
+          UIColorName: ""
+        UIStatusBarHidden: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSLocalNetworkUsageDescription: "LivePhoto Link 需要區域網路權限以自動搜尋並與您的 Android 手機或平板加密傳輸照片。"
+        NSBonjourServices:
+          - "_livephotolink._tcp"
+        NSCameraUsageDescription: "LivePhoto Link 僅在掃描配對 QR Code 或使用內建快拍傳送照片時使用相機。"
+        NSPhotoLibraryUsageDescription: "LivePhoto Link 需要讀取相簿權限以偵測新拍攝的照片並傳送至接收端。"
+        NSPhotoLibraryAddUsageDescription: "LivePhoto Link 需要儲存相簿權限，以便在您啟用「儲存至系統相簿」時將接收的照片存進相簿。"
+
+  LivePhotoLinkTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: LivePhotoLinkTests
+    dependencies:
+      - target: LivePhotoLink
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.livephotolink.app.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"

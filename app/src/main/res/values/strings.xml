@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LivePhoto Link</string>
+    <string name="channel_sender_name">照片傳送服務</string>
+    <string name="channel_sender_desc">於背景偵測三星相機新拍攝的照片並自動傳送至平板</string>
+    <string name="channel_receiver_name">照片接收服務</string>
+    <string name="channel_receiver_desc">於區域網路接收手機傳來的即時照片</string>
+</resources>
